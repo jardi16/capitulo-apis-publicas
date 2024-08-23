@@ -27,6 +27,7 @@ public class CreateObjectTest {
 
         response.prettyPrint();
         Assert.assertEquals(response.statusCode(), 200);
+        Assert.assertNotEquals(response.statusCode(), 400);
         TestData.objectId = response.jsonPath().getString("id");
     }
 }
