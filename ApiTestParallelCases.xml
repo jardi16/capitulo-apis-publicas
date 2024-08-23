@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite de pruebas" thread-count="3" parallel="tests">
+
+    <test name="Test Get Objects">
+        <classes>
+            <class name="com.apitest.GetObjectsTest"> </class>
+        </classes>
+    </test>
+
+    <test name="Test Get Valid Single Object">
+        <parameter name="id" value="/13"/>
+        <parameter name="expectedStatusCode" value="200"/>
+        <parameter name="expectedName" value="Apple iPad Air"> </parameter>
+        <classes>
+            <class name="com.apitest.GetSingleObjectTest"> </class>
+        </classes>
+    </test>
+
+    <test name="Test Get NoExist Single Object">
+        <parameter name="id" value="/100"> </parameter>
+        <parameter name="expectedStatusCode" value="404"> </parameter>
+        <parameter name="expectedName" value=""> </parameter>
+        <classes>
+            <class name="com.apitest.GetSingleObjectTest"> </class>
+        </classes>
+    </test>
+</suite>
